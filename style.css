@@ -1,0 +1,176 @@
+/* Example styling */
+* {
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {    
+    background-color: #0e100f;
+    color: #fffce1;
+    font-family: "Bebas Neue", sans-serif;
+}
+
+.head {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1em;
+    padding: 1em;
+
+    & img {
+        width: clamp(100px, 20vw, 200px);
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;        
+    }
+
+    & div {
+        text-transform: uppercase;
+        font-size: clamp(1.25rem, 2.5vw + 0.5rem, 2rem);
+    }
+}
+
+.start-section {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3em;
+    padding: 1em;
+}
+
+.headline {
+    font-size: clamp(2rem, 4vw + 1rem, 4rem);
+    text-align: center;
+}
+
+.end-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+    padding: 1em;
+}
+
+.left img {
+    border-radius: 10px;
+}
+
+.start-section img, .end-section img {
+    width: 500px;
+    max-width: 100%; 
+    height: auto; 
+    object-fit: cover; 
+}
+/* End example styling */
+
+
+/* This is whatcha need */
+
+/* For troubleshooting */
+/*
+.wrapper {
+    border: 2px solid red;
+}
+.container {
+    border: 2px solid blue;
+} 
+
+section {
+    border: 2px solid red;
+}
+
+section .left {
+    border: 2px solid blue;
+}
+*/
+
+#sideScroll {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    height: 100vh
+
+}
+
+#sideScroll .wrapper {
+    overflow-x: clip;
+    position: relative;
+}
+
+#sideScroll .container {
+    display: flex;
+    width: 400vw;
+}
+
+#sideScroll section {
+    width: 100vw;
+
+}
+
+.mw {
+    max-width: 1320px;
+    display: flex;
+    align-items: start;
+    margin: 0 auto;
+}
+
+#sideScroll .left {
+    flex: 1.5;
+    display: flex;
+    align-items: center;
+}
+
+#sideScroll .left img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain; 
+}
+
+#sideScroll .right {
+    flex: 2;
+    padding: 50px 0px 50px 50px;
+    display: flex;
+    align-items: center;
+}
+
+#sideScroll .right h3 {
+    color: #fffce1;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: clamp(2.5rem, 5vw + 1rem, 6rem);
+    font-style: normal;
+    font-weight: 300;
+    line-height: 97%;
+    letter-spacing: -0.025em;
+}
+
+#sideScroll .right p {
+    color: #fffce1;
+    font-family: "Bebas Neue", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: clamp(0.75rem, 2vw + 0.5rem, 1.125rem);
+    line-height: 160%;
+    letter-spacing: -0.015em;
+}
+
+@media screen and (max-width:1024px) {
+    
+    #sideScroll .right {
+        padding: 20px;
+        flex: 1;
+    }
+
+    #sideScroll .left {
+        flex: 1;
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width:767px) {
+    .mw {
+        flex-direction: column;
+    }
+}
